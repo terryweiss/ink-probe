@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> ink-strings Index</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+    <!--<link type="text/css" rel="stylesheet" href="styles/darkstrap-v0.9.0.css">-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/site.css">
+    <!-- <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css"> -->
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span8">
+			<div id="main">
+
+			    <h1 class="page-title">Index</h1>
+
+			    
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>ink-strings</h1>
+<p><img src="etc/splat.png" alt="ink strings logo" title="ink!">
+Part of the <em>ink</em> tool suite</p>
+<p>This is a nifty little tool that allows you to query objects and arrays using a reach-in syntax and query language based on Mongo's. Some
+intended actions the tool was meant to support:</p>
+<pre><code>  var probe = require(&quot;ink-probe&quot;);
+  /*
+  for an object or array that contains records with a field that looks like {name: {first: &quot;string&quot;, last: &quot;string&quot;}}
+  you can query it like os
+  */
+  var arr = probe.find(objectOrArray, {&quot;name.first&quot;: &quot;Terry&quot;, &quot;name.last&quot;: &quot;Flinstone&quot;});</code></pre>
+<p>Now arr contains all of the records in objectOrArray that match the query.</p>
+<pre><code>  /* to update records */
+  probe.update(objectOrArray, {&quot;name.first&quot;: &quot;Terry&quot;, &quot;name.last&quot;: &quot;Flinstone&quot;}, {$set: {&quot;name.first&quot;: &quot;Fred&quot;}});</code></pre>
+<p>Now all records that match &quot;Terry Flinstone&quot; will have been updated to &quot;Fred Flinstone&quot;.</p>
+<p>But wait! Put your checkbook away! You can also <code>findOne</code>, <code>findKeys</code> and check for <code>all</code> and <code>some</code> conditions. Finally, you can
+also reach in directly using <code>reachin</code> and force an update directly on a field for a single record using <code>pushin</code>. How? Good question. See
+the...</p>
+<h2>Documentation</h2>
+<p><em>ink-probe</em> comes with a comprehensive set of methods.</p>
+<ul>
+<li><a href="http://terryweiss.github.io/ink-probe/probe.queryOperators.html">Supported Query Operators</a></li>
+<li><a href="http://terryweiss.github.io/ink-probe/probe.updateOperators.html">Supported Update Operators</a></li>
+<li><a href="http://terryweiss.github.io/ink-probe/probe.html">Methods/API</a></li>
+</ul>
+<h2>Contributing</h2>
+<p>Yes! Contribute. Make sure your code looks essentially like the code you see. Document using JSDoc tags.</p>
+<h2>Installation</h2>
+<pre><code>npm install ink-probe</code></pre>
+<h2>Usage</h2>
+<p>From node:
+    var probe = require(&quot;ink-probe&quot;);</p>
+<p>On the web:
+Copy <code>dist/ink.probe.js</code> or <code>dist/ink.probe.min.js</code> to your assets directory and then load it directly</p>
+<pre><code>&lt;script src=&quot;js/ink.probe.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    // all of the methods hang right off of window.ink.probe
+    var goHome = ink.probe.find(obj, {field: &quot;value&quot;);
+&lt;/script&gt;</code></pre>
+<h2>Contributing</h2>
+<p>Yes! Contribute. Make sure your code looks essentially like the code you see. Document using JSDoc tags.</p>
+<p>Make sure you have <a href="https://github.com/gruntjs/grunt-cli">grunt-cli</a> installed globally. To test, you will also need
+<a href="https://github.com/caolan/nodeunit">nodeunit</a> installed globally. To test:</p>
+<pre><code>nodeunit tests/</code></pre>
+<h2>Roadmap</h2>
+<ul>
+<li>Translate from coffee to JS.</li>
+<li>Support the <code>.$.</code> positional operator for array updates</li>
+<li>Support indexing</li>
+<li>Improve performance for non-indexed operations</li>
+</ul>
+<h2>ink tools</h2>
+<p>Also see</p>
+<ul>
+<li><a href="https://github.com/terryweiss/ink-probe">ink-probe</a></li>
+<li><a href="https://github.com/terryweiss/ink-strings">ink-strings</a></li>
+<li>ink-collector (coming soon)</li>
+<li>ink-scene (coming soon)</li>
+<li>ink-dox (coming, but a long way off yet)</li>
+</ul>
+<h2>License</h2>
+<p>Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the &quot;Software&quot;), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p></article>
+    </section>
+
+
+
+
+
+
+			</div>
+		</div>
+        <div class="span4">
+			<nav>
+			    <div class='well'><span class="lead"><a href="index.html">Index</a></span><div class='tabbable tabs-left'><ul class='nav nav-tabs'><li><a href='#nav-modules' data-toggle='tab'>Modules</a></li><li><a href='#nav-namespaces'  data-toggle='tab'>Namespaces</a></li></ul><div class='tab-content'><div id='nav-modules' class='tab-pane'><ul class='nav nav-list'><li><a href="probe.html">ink/probe</a></li></ul></div><div id='nav-namespaces' class='tab-pane'><ul class='nav nav-list'><li><a href="probe.queryOperators.html">queryOperators</a></li><li><a href="probe.updateOperators.html">updateOperators</a></li></ul></div></div></div></div>
+			</nav>
+		</div>
+	</div>
+</div>
+<br clear="both">
+
+<footer>
+	<small>Copyright &copy; 2013 Terry Weiss. All rights reserved.</small>
+
+</footer>
+
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/jquery.min.js"> </script>
+    <script src="scripts/bootstrap-tab.js"> </script>
+    <script src="scripts/URI.js"> </script>
+
+    <script>
+        prettyPrint();
+    </script>
+    <script>
+    $(document).ready(function(){
+         var uri = URI(window.location.href);
+         var filename = uri.filename();
+         var link = $(".nav li>a[href='" + filename + "']");
+
+         if (link.length > 0){
+           link.parents("li:first").addClass("active");
+           var paneid = link.parents(".tab-pane").addClass("active").attr("id");
+
+           $(".nav-tabs li>a[href='#"+paneid+"']").parents("li:first").addClass("active");
+         }
+    });
+    </script>
+
+</body>
+</html>
