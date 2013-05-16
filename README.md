@@ -20,7 +20,7 @@ Now arr contains all of the records in objectOrArray that match the query.
 Now all records that match "Terry Flinstone" will have been updated to "Fred Flinstone".
 
 But wait! Put your checkbook away! You can also `findOne`, `findKeys` and check for `all` and `some` conditions. Finally, you can
-also reach in directly using `reachin` and force an update directly on a field for a single record using `pushin`. How? Good question. See
+also reach in directly using `get` and force an update directly on a field for a single record using `set`. How? Good question. See
 the...
 
 ## Documentation ##

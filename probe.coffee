@@ -781,7 +781,7 @@ exports.unique = ( obj, qu )->
   @param {string} setter The set operation.  See {@link module:ink/probe.updateOperators} for the operators you can use.
   @param {object} newValue The value to write to the, or if the operator is $pull, the query of items to look for
 */`
-exports.set = ( record, path, setter, newValue ) -> pushin( path, record, setter, newValue )
+exports.set = ( record, path, setter, newValue ) -> pushin( splitPath(path), record, setter, newValue )
 
 `/**
     Reaches into an object and allows you to get at a value deeply nested in an object. This is not a query, but a
@@ -791,7 +791,8 @@ exports.set = ( record, path, setter, newValue ) -> pushin( path, record, setter
     @param {object} record The record to reach into
     @return {*} Whatever was found in the record
 **/`
-exports.get = ( record, path ) -> reachin( path, record )
+exports.get = ( record, path ) -> reachin( splitPath(path), record )
+
 
 ###*
     Returns true if any of the items match the query. Aliases as `any`
