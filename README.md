@@ -1,6 +1,6 @@
 # ink-strings #
 ![ink strings logo](etc/splat.png "ink!")
-Part of the *ink* tool suite
+Part of the **ink** tool suite
 
 This is a nifty little tool that allows you to query objects and arrays using a reach-in syntax and query language based on Mongo's. Some
 intended actions the tool was meant to support:
@@ -12,19 +12,20 @@ intended actions the tool was meant to support:
       */
       var arr = probe.find(objectOrArray, {"name.first": "Terry", "name.last": "Flinstone"});
 
-Now arr contains all of the records in objectOrArray that match the query.
+Now arr contains all of the records in objectOrArray that match the query - records with both a first and last name that match
+"Terry" and "Flinstone".
 
       /* to update records */
       probe.update(objectOrArray, {"name.first": "Terry", "name.last": "Flinstone"}, {$set: {"name.first": "Fred"}});
 
 Now all records that match "Terry Flinstone" will have been updated to "Fred Flinstone".
 
-But wait! Put your checkbook away! You can also `findOne`, `findKeys` and check for `all` and `some` conditions. Finally, you can
-also reach in directly using `get` and force an update directly on a field for a single record using `set`. How? Good question. See
-the...
+But wait! Put your checkbook away! You can also `findOne`, `findKeys` and check for `all` and `some` conditions and a ton of other
+galaxy conquering goodness. Finally, you can also reach in directly using `get` and force an update directly on a field for a
+single record using `set`. How? Good question. See the...
 
 ## Documentation ##
-*ink-probe* comes with a comprehensive set of methods.
+**ink-probe** comes with a comprehensive set of methods.
 
 * [Supported Query Operators](http://terryweiss.github.io/ink-probe/probe.queryOperators.html)
 * [Supported Update Operators](http://terryweiss.github.io/ink-probe/probe.updateOperators.html)
@@ -48,7 +49,7 @@ Copy `dist/ink.probe.js` or `dist/ink.probe.min.js` to your assets directory and
 	<script src="js/ink.probe.js"></script>
 	<script>
 		// all of the methods hang right off of window.ink.probe
-        var goHome = ink.probe.find(obj, {field: "value");
+        var myValue = ink.probe.find(obj, {field: "value");
 	</script>
 
 
@@ -71,7 +72,7 @@ Also see
 
 + [ink-probe](https://github.com/terryweiss/ink-probe)
 + [ink-strings](https://github.com/terryweiss/ink-strings)
-+ ink-collector (coming soon)
++ ink-collector (https://github.com/terryweiss/ink-collector)
 + ink-scene (coming soon)
 + ink-dox (coming, but a long way off yet)
 
