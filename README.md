@@ -1,4 +1,4 @@
-# ink-strings #
+# ink-probe #
 ![ink strings logo](etc/splat.png "ink!")
 Part of the **ink** tool suite
 

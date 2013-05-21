@@ -4,14 +4,15 @@
     @module ink/probe
     @author Terry Weiss
     @license MIT
+    @mixing
 */`
 `/**
-These operators manage updates
+These operators manage updates (this is not a real namespace, but a document artifact to organize the symbols)
 @namespace updateOperators
 @memberof module:ink/probe
 **/`
 `/**
-Query operators
+Query operators  (this is not a real namespace, but a document artifact to organize the symbols)
 @namespace queryOperators
 @memberof module:ink/probe
 **/`
@@ -828,7 +829,6 @@ bindables =
   findKeys  : exports.findKeys
   find      : exports.find
   update    : exports.update
-  remove    : exports.remove
   some      : exports.some
   every     : exports.every
 

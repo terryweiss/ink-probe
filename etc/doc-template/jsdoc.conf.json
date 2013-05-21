@@ -8,7 +8,8 @@
         "monospaceLinks": false,
         "default": {
             "outputSourceFiles": true
-        }
+        },
+	    "systemName": "unkle"
     } ,
 	"markdown": {
 		"parser": "gfm",
