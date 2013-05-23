@@ -5709,14 +5709,15 @@ require.define("/probe.js",function(require,module,exports,__dirname,__filename,
     @module ink/probe
     @author Terry Weiss
     @license MIT
+    @mixing
 */;
   /**
-These operators manage updates
+These operators manage updates (this is not a real namespace, but a document artifact to organize the symbols)
 @namespace updateOperators
 @memberof module:ink/probe
 **/;
   /**
-Query operators
+Query operators  (this is not a real namespace, but a document artifact to organize the symbols)
 @namespace queryOperators
 @memberof module:ink/probe
 **/;
@@ -6678,7 +6679,7 @@ Returns the set of unique records that match a query
 */;
 
   exports.set = function(record, path, setter, newValue) {
-    return pushin(path, record, setter, newValue);
+    return pushin(splitPath(path), record, setter, newValue);
   };
 
   /**
@@ -6691,7 +6692,7 @@ Returns the set of unique records that match a query
 **/;
 
   exports.get = function(record, path) {
-    return reachin(path, record);
+    return reachin(splitPath(path), record);
   };
 
   /**
@@ -6731,7 +6732,6 @@ Returns the set of unique records that match a query
     findKeys: exports.findKeys,
     find: exports.find,
     update: exports.update,
-    remove: exports.remove,
     some: exports.some,
     every: exports.every
   };
