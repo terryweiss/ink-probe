@@ -72,7 +72,7 @@ Also see
 
 + [ink-probe](https://github.com/terryweiss/ink-probe)
 + [ink-strings](https://github.com/terryweiss/ink-strings)
-+ ink-collector (https://github.com/terryweiss/ink-collector)
++ [ink-collector](https://github.com/terryweiss/ink-collector)
 + ink-scene (coming soon)
 + ink-dox (coming, but a long way off yet)
 
