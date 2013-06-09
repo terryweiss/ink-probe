@@ -8,7 +8,7 @@
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
 
 	
 	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
@@ -111,7 +111,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line15">line 15</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-15">line 15</a>
     </li></ul></dd>
     
 
@@ -180,7 +180,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line401">line 401</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-401">line 401</a>
     </li></ul></dd>
     
 
@@ -195,8 +195,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"categories" : {$all : ["cat4", "cat2", "cat1"]}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"categories" : {$all : ["cat4", "cat2", "cat1"]}} );</pre>
+
 
     
 </dd>
@@ -241,7 +242,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line596">line 596</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-596">line 596</a>
     </li></ul></dd>
     
 
@@ -256,11 +257,12 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
     probe.find( data, {$and : [
     		{"name.first" : "Mildred"},
     		{"name.last" : "Graves"}
-    	]} );</code></pre>
+    	]} );</pre>
+
 
     
 </dd>
@@ -306,7 +308,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line568">line 568</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-568">line 568</a>
     </li></ul></dd>
     
 
@@ -321,10 +323,11 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
     probe.find( data, {attr : {$elemMatch : [
     		{color : "red", "hand" : "left"}
-    	]}} );</code></pre>
+    	]}} );</pre>
+
 
     
 </dd>
@@ -370,7 +373,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line359">line 359</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-359">line 359</a>
     </li></ul></dd>
     
 
@@ -385,10 +388,11 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
     probe.find( data, {categories : "cat1"} );
     // is the same as
-    probe.find( data, {categories : {$eq: "cat1"}} );</code></pre>
+    probe.find( data, {categories : {$eq: "cat1"}} );</pre>
+
 
     
 </dd>
@@ -433,7 +437,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line505">line 505</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-505">line 505</a>
     </li></ul></dd>
     
 
@@ -448,8 +452,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"name.middle" : {$exists : true}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"name.middle" : {$exists : true}} );</pre>
+
 
     
 </dd>
@@ -494,7 +499,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line421">line 421</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-421">line 421</a>
     </li></ul></dd>
     
 
@@ -509,8 +514,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$gt : 24}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$gt : 24}} );</pre>
+
 
     
 </dd>
@@ -555,7 +561,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line434">line 434</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-434">line 434</a>
     </li></ul></dd>
     
 
@@ -570,8 +576,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$gte : 50}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$gte : 50}} );</pre>
+
 
     
 </dd>
@@ -616,7 +623,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line473">line 473</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-473">line 473</a>
     </li></ul></dd>
     
 
@@ -631,8 +638,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$in : [24, 28, 60]}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$in : [24, 28, 60]}} );</pre>
+
 
     
 </dd>
@@ -677,7 +685,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line447">line 447</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-447">line 447</a>
     </li></ul></dd>
     
 
@@ -692,8 +700,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$lt : 24}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$lt : 24}} );</pre>
+
 
     
 </dd>
@@ -738,7 +747,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line460">line 460</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-460">line 460</a>
     </li></ul></dd>
     
 
@@ -753,8 +762,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$lte : 50}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$lte : 50}} );</pre>
+
 
     
 </dd>
@@ -799,7 +809,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line518">line 518</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-518">line 518</a>
     </li></ul></dd>
     
 
@@ -814,8 +824,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$mod : [2, 0]}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$mod : [2, 0]}} );</pre>
+
 
     
 </dd>
@@ -861,7 +872,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line381">line 381</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-381">line 381</a>
     </li></ul></dd>
     
 
@@ -876,8 +887,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"name.first" : {$ne : "Sheryl"}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"name.first" : {$ne : "Sheryl"}} );</pre>
+
 
     
 </dd>
@@ -922,7 +934,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line489">line 489</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-489">line 489</a>
     </li></ul></dd>
     
 
@@ -937,8 +949,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"age" : {$nin : [24, 28, 60]}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"age" : {$nin : [24, 28, 60]}} );</pre>
+
 
     
 </dd>
@@ -983,7 +996,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line662">line 662</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-662">line 662</a>
     </li></ul></dd>
     
 
@@ -998,11 +1011,12 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
     probe.find( data, {$nor : [
     		{"age" : {$in : [24, 28, 60]}},
     		{categories : "cat1"}
-    	]} );</code></pre>
+    	]} );</pre>
+
 
     
 </dd>
@@ -1047,7 +1061,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line695">line 695</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-695">line 695</a>
     </li></ul></dd>
     
 
@@ -1062,8 +1076,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {$not : {"age" : {$lt : 24}}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {$not : {"age" : {$lt : 24}}} );</pre>
+
 
     
 </dd>
@@ -1108,7 +1123,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line629">line 629</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-629">line 629</a>
     </li></ul></dd>
     
 
@@ -1123,11 +1138,12 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
     probe.find( data, {$or : [
     		{"age" : {$in : [24, 28, 60]}},
     		{categories : "cat1"}
-    	]} );</code></pre>
+    	]} );</pre>
+
 
     
 </dd>
@@ -1172,7 +1188,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line552">line 552</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-552">line 552</a>
     </li></ul></dd>
     
 
@@ -1187,8 +1203,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {"name.first" : {$regex : "m*", $options : "i"}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {"name.first" : {$regex : "m*", $options : "i"}} );</pre>
+
 
     
 </dd>
@@ -1233,7 +1250,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#line539">line 539</a>
+        <a href="probe.js.html">probe.js</a>, <a href="probe.js.html#sunlight-1-line-539">line 539</a>
     </li></ul></dd>
     
 
@@ -1248,8 +1265,9 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>    var probe = require("ink-probe");
-    probe.find( data, {attr : {$size : 3}} );</code></pre>
+    <pre class="sunlight-highlight-javascript">    var probe = require("ink-probe");
+    probe.find( data, {attr : {$size : 3}} );</pre>
+
 
     
 </dd>
@@ -1282,7 +1300,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a>
-		on Fri May 24 2013 11:19:59 GMT-0400 (EDT) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Sun Jun 09 2013 11:55:26 GMT-0400 (EDT) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
@@ -1296,13 +1314,19 @@
 		</div>
 
 	</div>
-	<script src="scripts/prettify/prettify.js"></script>
-	<script src="scripts/prettify/lang-css.js"></script>
+	<script src="scripts/sunlight.js"></script>
+	<script src="scripts/sunlight.javascript.js"></script>
+	<script src="scripts/sunlight-plugin.doclinks.js"></script>
+	<script src="scripts/sunlight-plugin.linenumbers.js"></script>
+	<script src="scripts/sunlight-plugin.menu.js"></script>
 	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.scrollTo.js"></script>
+	<script src="scripts/jquery.localScroll.js"></script>
 	<script src="scripts/bootstrap-dropdown.js"></script>
 	<script src="scripts/toc.js"></script>
 
-	<script> prettyPrint(); </script>
+
+	<script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
 
 	<script>
 		$( function () {
@@ -1320,6 +1344,9 @@
 	
 	<script>
 		$( function () {
+			$('#main').localScroll({
+				offset: { top: 56 } //offset by the height of your header (give or take a few px, see what works for you)
+			});
 			$( "dt h4.name" ).each( function () {
 				var $this = $( this );
 				var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
