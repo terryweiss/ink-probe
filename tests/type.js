@@ -18,10 +18,8 @@ exports[ "Open test data file" ] = function ( test ) {
 	} );
 };
 
-
-exports["test bind to"] = function(test){
-	var bound =probe.bindTo(data);
-
+exports["test bind to"] = function ( test ) {
+	var bound = probe.proxy( data );
 
 	var results = bound.find( {categories : "cat1"} );
 
@@ -34,9 +32,8 @@ exports["test bind to"] = function(test){
 
 };
 
-exports["test mix to"] = function(test){
-	probe.mixTo(data);
-
+exports["test mix to"] = function ( test ) {
+	probe.mixin( data );
 
 	var results = data.find( {categories : "cat1"} );
 

@@ -8,7 +8,8 @@
  */
 
 var sys = require( "lodash" );
-
+var Promise = require( 'promise' );
+var async = require( "async" );
 /**
  The list of operators that are nested within the expression object. These take the form <code>{path:{operator:operand}}</code>
  @private
@@ -957,16 +958,143 @@ var bindables = {
 	find       : exports.find,
 	update     : exports.update,
 	some       : exports.some,
-	every      : exports.every
+	every      : exports.every,
+	"get"      : exports.get,
+	"set"      : exports.set
+};
+
+var dataBinderOptions = exports.dataBinderOptions = {
+	getter         : null,
+	getterAsync    : false,
+	setter         : null,
+	validator      : null,
+	validatorAsync : false,
+	setterAsync    : false
+};
+
+exports.unfasten = function ( path, record ) {
+	var context = record;
+	var lastParent = context;
+	var parts = path.split( exports.delimiter );
+	var lastPartName = path;
+	var lastParentName;
+	sys.each( parts, function ( part ) {
+		lastParentName = part;
+		lastParent = context;
+		context = context[part];
+		lastPartName = part;
+		if ( sys.isNull( context ) || sys.isUndefined( context ) ) {
+			context = {};
+		}
+	} );
+
+	if ( lastParent === context ) {
+		deleteBindings( record, lastPartName );
+	} else {
+		deleteBindings( lastParent, lastPartName );
+	}
+
+	function deleteBindings( mountPoint, mountName ) {
+		mountPoint[mountName] = mountPoint["__" + mountName + "__"];
+		delete mountPoint["__" + mountName + "__"];
+	}
+} ;
+
+exports.fasten = function ( path, record, options ) {
+	options = sys.extend( {}, dataBinderOptions, options );
+	var context = record;
+	var lastParent = context;
+	var parts = path.split( exports.delimiter );
+	var lastPartName = path;
+	var lastParentName;
+
+	sys.each( parts, function ( part ) {
+		lastParentName = part;
+		lastParent = context;
+		context = context[part];
+		lastPartName = part;
+		if ( sys.isNull( context ) || sys.isUndefined( context ) ) {
+			context = {};
+		}
+	} );
+
+	if ( lastParent === context ) {
+		setUpBindings( record, lastPartName );
+	} else {
+		setUpBindings( lastParent, lastPartName );
+	}
+
+	function setUpBindings( mountPoint, mountName ) {
+		mountPoint["__" + mountName + "__"] = mountPoint[mountName];
+		Object.defineProperty( mountPoint, mountName, {
+			get : function () {
+				if ( sys.isFunction( options.getter ) ) {
+					var promise;
+					if ( options.getterAsync === true ) {
+						promise = Promise.denodeify( options.getter );
+					}
+
+					if ( promise ) {
+						return promise( mountPoint["__" + mountName + "__"] ).then( function ( val ) {
+							mountPoint["__" + mountName + "__"] = val;
+						} );
+					} else {
+						mountPoint["__" + mountName + "__"] = options.getter( mountPoint["__" + mountName + "__"] );
+						return mountPoint["__" + mountName + "__"];
+					}
+
+				} else {
+					return mountPoint["__" + mountName + "__"];
+				}
+			},
+			set : function ( val ) {
+				async.waterfall( [
+					function ( done ) {
+						if ( sys.isFunction( options.validator ) ) {
+							if ( options.validatorAsync ) {
+								options.validator( val, mountPoint["__" + mountName + "__"], record, done );
+							} else {
+								var res = options.validator( val, mountPoint["__" + mountName + "__"], record );
+								if ( res === true ) {
+									done();
+								} else {
+									done( res );
+								}
+							}
+						} else {
+							done();
+						}
+					},
+					function ( done ) {
+						if ( sys.isFunction( options.setter ) ) {
+							if ( options.setterAsync === true ) {
+								options.setter( val, mountPoint["__" + mountName + "__"], record, done );
+							} else {
+								done( null, options.setter( val, mountPoint["__" + mountName + "__"], record ) );
+							}
+						} else {
+							done( null, val );
+						}
+					}
+				], function ( err, newVal ) {
+					if ( err ) { throw new Error( err ); }
+					mountPoint["__" + mountName + "__"] = newVal;
+				} );
+
+			}
+		} );
+	}
+
+	return context;
 };
 
 /**
- Binds the query and update methods to a specific object. When called these
+ Binds the query and update methods to a new object. When called these
  methods can skip the first parameter so that find(object, query) can just be called as find(query)
  @param {object|array} obj The object or array to bind to
  @return {object} An object with method bindings in place
  **/
-exports.bindTo = function ( obj ) {
+exports.proxy = function ( obj ) {
 	var retVal;
 
 	retVal = {};
@@ -983,7 +1111,7 @@ exports.bindTo = function ( obj ) {
  @param {object|array=} collection If the collection is not the same as <code>this</code> but is a property, or even
  a whole other object, you specify that here. Otherwise the <code>obj</code> is assumed to be the same as the collecion
  **/
-exports.mixTo = function ( obj, collection ) {
+exports.mixin = function ( obj, collection ) {
 	collection = collection || obj;
 	return sys.each( bindables, function ( val, key ) {
 		obj[key] = sys.bind( val, obj, collection );
